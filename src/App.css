@@ -1,38 +1,99 @@
-.App {
+.navbar {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem;
+  background: rgb(214, 97, 62);
+  overflow: auto;
+  font-style: normal;
+  color: rgb(144, 180, 127);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-shadow: 2px 2px 5px rgb(79, 67, 67);
+}
+.navbar > h3 {
+  margin-left: 50px;
+  font-size: 20px;
+}
+.navbar > h5 {
+  margin-left: 30px;
+}
+.navbar > h5:hover {
+  color: white;
+  cursor: pointer;
+}
+.intro {
+  object-fit: scale-down;
+  height: 300px;
+  width: 100%;
+  background-image: url("https://cdn.citymapia.com/kottayam/bon-bons-supermarket/29830/Portfolio.jpg?biz=8282");
+  /* background-image: url("https://cdn1.vectorstock.com/i/1000x1000/94/60/online-shopping-and-sale-items-gifts-shopping-vector-29439460.jpg"); */
+
+  background-position: 0em;
+}
+.intro > h1 {
+  margin-top: 0;
+  line-height: 6;
+  text-align: center;
+  font-size: 50px;
+  color: rgb(230, 20, 20);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-shadow: 5px 5px 10px rgb(34, 33, 33);
+}
+.items-container {
+  height: 400px;
+  width: 20%;
+  box-shadow: 2px 2px 2px #888888;
+  margin: 10px;
+}
+.item-image {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+/* .items-container-details {
+  height: 200px;
+  width: fit-content;
+  box-shadow: 2px 2px 2px #888888;
+  align-items: center;
+} */
+.items-container-details {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-name {
+  margin: 10px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.item-price {
+  margin: 20px;
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.item-button {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin: auto;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(160, 158, 158);
+  cursor: pointer;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.add-cart-list {
+  display: flex;
+  justify-content: space-around;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-cart {
+  width: 250px;
+  margin: 10px;
 }
