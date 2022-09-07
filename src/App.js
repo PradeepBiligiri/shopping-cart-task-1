@@ -1,7 +1,9 @@
 import "./App.css";
 import { NavBar } from "./NavBar";
+import { useState } from "react";
 
 function App() {
+  const [items, setItems] = useState("");
   const itemList = [
     {
       id: 1,
@@ -66,10 +68,10 @@ function App() {
         <h1>Shop in Style</h1>
       </div>
       <div className="add-cart-list">
-        <AddCart />
+        <AddCart items={items} />
         <div className="item-list">
           {itemList.map((item, key) => {
-            return <Items item={item} key={item.id} />;
+            return <Items item={item} key={item.id} setItems={setItems} />;
           })}
         </div>
       </div>
@@ -79,31 +81,48 @@ function App() {
 
 export default App;
 
-function Items({ item }) {
+function Items({ item, setItems }) {
   return (
     <div className="items-container">
       <img src={item.image} alt={item.name} className="item-image" />
       <div className="items-container-details">
         <h3 className="item-name">{item.name}</h3>
         <h5 className="item-price">Rs.{item.price}</h5>
-        <button className="item-button">Add</button>
+        <button className="item-button" onClick={() => setItems(item)}>
+          Add
+        </button>
       </div>
+      {/* <AddCart items={items} /> */}
     </div>
   );
 }
 
-function AddCart() {
+function AddCart({ items }) {
   return (
     <div className="add-cart">
-      <h1>Add Item to Cart</h1>
-      {/* <table border={1}>
+      <span>{items.name}</span>
+      <span>{items.price}</span>
+    </div>
+  );
+}
+{
+  /* <div>
+        {items.map((im) => {
+          return (
+            <ul>
+              <li>im</li>
+            </ul>
+          );
+        })}
+      </div> */
+}
+{
+  /* <table border={1}>
         <thead>
           <tr>
             <td>Item name</td>
             <td>Price</td>
           </tr>
         </thead>
-      </table> */}
-    </div>
-  );
+      </table> */
 }
