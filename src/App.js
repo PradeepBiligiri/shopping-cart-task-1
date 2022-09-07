@@ -1,6 +1,7 @@
 import "./App.css";
 import { NavBar } from "./NavBar";
 import { useState } from "react";
+import { Icon } from "@mui/material";
 
 function App() {
   const [items, setItems] = useState("");
@@ -98,10 +99,14 @@ function Items({ item, setItems }) {
 }
 
 function AddCart({ items }) {
+  // const [additem, setAddItem] = useState[""];
   return (
-    <div className="add-cart">
-      <span>{items.name}</span>
-      <span>{items.price}</span>
+    <div className="add-cart-container">
+      <div className="add-cart">
+        <h2>Add Items to Cart </h2>
+        <span>{items.name}</span>
+        <span>{items.price}</span>
+      </div>
     </div>
   );
 }

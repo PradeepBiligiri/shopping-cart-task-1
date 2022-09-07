@@ -93,7 +93,15 @@
   display: flex;
   justify-content: space-around;
 }
-.add-cart {
-  width: 250px;
-  margin: 10px;
+.add-cart-container {
+  width: 450px;
+  margin: 20px;
+}
+.add-cart > h2 {
+  background: rgb(92, 91, 91);
+  color: white;
+  box-shadow: 2px 2px 2px gray;
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
 }
