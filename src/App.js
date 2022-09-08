@@ -99,11 +99,15 @@ function Items({ item, setItems }) {
 }
 
 function AddCart({ items }) {
-  // const [additem, setAddItem] = useState[""];
+  const adItems = [];
+  const [additem, setAddItem] = useState(adItems);
+
   return (
     <div className="add-cart-container">
       <div className="add-cart">
         <h2>Add Items to Cart </h2>
+        {/* {setAddItem([...additem, items.name])}
+        {setAddItem([...additem, items.price])} */}
         <span>{items.name}</span>
         <span>{items.price}</span>
       </div>
