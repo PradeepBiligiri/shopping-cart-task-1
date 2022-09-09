@@ -1,10 +1,9 @@
 import "./App.css";
 import { NavBar } from "./NavBar";
 import { useState } from "react";
-import { Icon } from "@mui/material";
 
 function App() {
-  const [items, setItems] = useState("");
+  const [items, setItems] = useState([]);
   const itemList = [
     {
       id: 1,
@@ -72,7 +71,14 @@ function App() {
         <AddCart items={items} />
         <div className="item-list">
           {itemList.map((item, key) => {
-            return <Items item={item} key={item.id} setItems={setItems} />;
+            return (
+              <Items
+                item={item}
+                key={item.id}
+                setItems={setItems}
+                items={items}
+              />
+            );
           })}
         </div>
       </div>
@@ -82,7 +88,8 @@ function App() {
 
 export default App;
 
-function Items({ item, setItems }) {
+function Items({ item, setItems, items }) {
+  // const [items, setItems] = useState([]);
   return (
     <div className="items-container">
       <img src={item.image} alt={item.name} className="item-image" />
@@ -90,26 +97,30 @@ function Items({ item, setItems }) {
         <h3 className="item-name">{item.name}</h3>
         <h5 className="item-price">Rs.{item.price}</h5>
         <button className="item-button" onClick={() => setItems(item)}>
-          Add
+          Add To Cart
         </button>
+        {/* <button
+          className="item-button"
+          onClick={() => setItems([...items, item])}
+        >
+          Add To Cart
+        </button> */}
       </div>
-      {/* <AddCart items={items} /> */}
+      {/* {items.map(it, (index) => {
+        <AddCart key={index} items={it} />;
+      })} */}
     </div>
   );
 }
 
 function AddCart({ items }) {
-  const adItems = [];
-  const [additem, setAddItem] = useState(adItems);
-
   return (
     <div className="add-cart-container">
       <div className="add-cart">
         <h2>Add Items to Cart </h2>
-        {/* {setAddItem([...additem, items.name])}
-        {setAddItem([...additem, items.price])} */}
-        <span>{items.name}</span>
-        <span>{items.price}</span>
+        {/* {items.lenghth === 0 && <div>Cart is Empty</div>} */}
+        <div>{items.name}</div>
+        <div>{items.price}</div>
       </div>
     </div>
   );
